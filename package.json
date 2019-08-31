@@ -1,0 +1,23 @@
+{
+  "name": "au3_sd_career-door",
+  "version": "1.0.0",
+  "description": "Career door",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attainu-nightingale/au3_sd_career-door.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attainu-nightingale/au3_sd_career-door/issues"
+  },
+  "homepage": "https://github.com/attainu-nightingale/au3_sd_career-door#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.0.4"
+  }
+}
