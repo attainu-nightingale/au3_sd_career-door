@@ -15,57 +15,89 @@ router.post('/signup', (req, res) => {
     let city = req.body.city;
     let country = req.body.country;
     if (!validateInput(username, password)) {
-        res.send("Invalid input");
+        res.status(422).send(err.message);
     }
     employeeUserInstance.createNewEmployeeUser(username, password, (err, data) => {
         if (err) {
-            res.send(err.message);
+            res.status(409).send(err.message);
             return;
         }
         let id = data
         employeeInstance.createEmployee(id, username, firstname, lastname, gender, email, city, country, (err, employData) => {
             if (err) {
-                res.send(err.message);
+                res.status(409).send(err.message);
                 return
             }
-            res.send("Added Sucessfully");
+            req.session.user = id;
+            req.session.loggedIn = true;
+            res.send('/employee/profile/' + id);
         })
 
     });
 });
 
-
+``
 
 router.post('/login', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     employeeUserInstance.loginUser(username, password, (err, data) => {
         if (err) {
-            res.send(err.message);
+            res.status(401).send(err.message);
+            return;
         }
-       let id = data;
-       console.log(id)
-       
-        employeeInstance.getEmployee(id, (err, employData) =>{
-            if(err){
-                res.send(err.message);
-                return
-            }
-            res.send(employData);
-        })
+        let id = data;
+        req.session.user = id;
+        req.session.loggedIn = true;
+        res.send('/employee/profile/' + id);
     })
 });
 
-
-router.get('/login', (req, res)=>{
-    res.render('loginEmployee',{
-        title:"Login",
-        stylesheet:"loginEmployee.css"    })
+router.get('/profile/:userId', (req, res) => {
+    let id = req.params.userId;
+    if (req.session.user === req.params.userId && req.session.loggedIn) {
+        employeeInstance.getEmployee(id, (err, employee) => {
+            if (err) {
+                res.status(500).send(new Error("unknown error"));
+            }
+            // let firstname = employee.firstname;
+            // let lastname =  employee.lastname;
+            res.render('employeeProfile.hbs', {
+                title: "Employee Profile",
+                employee: employee,
+                styles: "employeeProfile.css",
+                script: "employeeProfile.js"
+            })
+        })
+    } else {
+        res.redirect('/employee/login')
+    }
 })
+
+router.get('/login', (req, res) => {
+    res.render('loginEmployee.hbs', {
+        title: "Login Employee",
+        styles: "loginEmployee.css",
+        script: "loginEmployee.js"
+    })
+});
 
 function validateInput() {
     //validates input
     return true;
 }
+router.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/employee/login')
 
+});
+
+router.get('/signup', (req, res) => {
+    res.render('employeeSignup.hbs', {
+        title: "Employee Signup",
+        styles: "employeeSignup.css",
+        script: "employeeSignup.js"
+
+    })
+})
 module.exports = router;

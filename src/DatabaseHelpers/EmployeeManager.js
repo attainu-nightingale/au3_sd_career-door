@@ -26,7 +26,7 @@ class EmployeeManager {
                 callback(new Error("Unknown error"));
                 return
             }
-            callback(null, data)
+            callback(null, data.employee);
         })
     }
 }
