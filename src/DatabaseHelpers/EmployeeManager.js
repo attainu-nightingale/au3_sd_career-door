@@ -21,8 +21,10 @@ class EmployeeManager {
     }
     getEmployee(id, callback) {
         id = new ObjectId(id);
-        this.collection.findOne({"employee.id":id},(err, data)=>{
-            if (err){
+        this.collection.findOne({
+            "employee.id": id
+        }, (err, data) => {
+            if (err) {
                 callback(new Error("Unknown error"));
                 return
             }

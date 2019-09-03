@@ -36,7 +36,6 @@ router.post('/signup', (req, res) => {
     });
 });
 
-``
 
 router.post('/login', (req, res) => {
     let username = req.body.username;
@@ -60,8 +59,6 @@ router.get('/profile/:userId', (req, res) => {
             if (err) {
                 res.status(500).send(new Error("unknown error"));
             }
-            // let firstname = employee.firstname;
-            // let lastname =  employee.lastname;
             res.render('employeeProfile.hbs', {
                 title: "Employee Profile",
                 employee: employee,
