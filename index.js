@@ -24,7 +24,8 @@ mongodbUtil.connectToServer((err, client) => {
             expires: 600000
         }
     }));
- app.use('/employee', require('./routes/UserEmployeeRoute'))
+ app.use('/employee', require('./routes/UserEmployeeRoute'));
+ app.use('/review', require('./routes/ReviewRoute'))
  app.get('/',(req,res)=>{
      res.render('home.hbs',{
          title:"Career Door",

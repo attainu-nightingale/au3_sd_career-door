@@ -31,5 +31,16 @@ class EmployeeManager {
             callback(null, data.employee);
         })
     }
+    addReviewIdInReviews(userId, reviewId, callback){
+        this.collection.updateOne({"employee.id": new ObjectId(userId)},{
+            $push:{"employee.reviews":reviewId}
+        }, (err, data)=>{
+            if (err){
+                callback(new Error("unsucessful"));
+                return
+            }
+            callback(null, data)
+        })
+    }
 }
 module.exports = EmployeeManager;

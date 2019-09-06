@@ -2,8 +2,11 @@ var express = require('express')
 var router = express.Router();
 const EmployeeUserManager = require('../src/DataBaseHelpers/UserEmplyoeeManager');
 const EmployeeManager = require('../src/DatabaseHelpers/EmployeeManager');
+const ReviewManager = require('../src/DatabaseHelpers/ReviewsManager');
+const reviewInstance = new ReviewManager();
 const employeeUserInstance = new EmployeeUserManager();
 const employeeInstance = new EmployeeManager();
+
 
 router.post('/signup', (req, res) => {
     let username = req.body.username;
@@ -54,17 +57,37 @@ router.post('/login', (req, res) => {
 
 router.get('/profile/:userId', (req, res) => {
     let id = req.params.userId;
+    let data;
     if (req.session.user === req.params.userId && req.session.loggedIn) {
         employeeInstance.getEmployee(id, (err, employee) => {
             if (err) {
                 res.status(500).send(new Error("unknown error"));
             }
-            res.render('employeeProfile.hbs', {
-                title: "Employee Profile",
-                employee: employee,
-                styles: "employeeProfile.css",
-                script: "employeeProfile.js"
-            })
+            reviewInstance.getReviewOfEmployee(id, (err, reviews) => {
+                if (err) {
+                    console.log(err)
+                }
+                if(reviews){
+                    res.render('employeeProfile.hbs', {
+                        title: "Employee Profile",
+                        employee: employee,
+                        reviews:reviews,
+                        styles: "employeeProfile.css",
+                        script: "employeeProfile.js"
+                    })
+                }
+            else{
+                res.render('employeeProfile.hbs', {
+                    title: "Employee Profile",
+                    employee: employee,
+                    styles: "employeeProfile.css",
+                    script: "employeeProfile.js"
+                })
+            }
+            
+
+            });
+
         })
     } else {
         res.redirect('/employee/login')
@@ -96,5 +119,9 @@ router.get('/signup', (req, res) => {
         script: "employeeSignup.js"
 
     })
+});
+
+router.post('/addReview', (req, res) => {
+
 })
 module.exports = router;
