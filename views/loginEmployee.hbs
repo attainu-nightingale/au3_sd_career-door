@@ -1,18 +1,36 @@
-<h1>Login Employee</h1>
+
 <div class="container">
-<form action="/employee/login" id = "employeeLogin" method="POST">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-primary modal-title w-100 text-center">
+                    Employee Login
+                </h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
 
-<div class="form-group">
-    <input type="text" placeholder="Username" name="username"  required  autofocus>
-</div>
-<div class="form-group">
-    <input type="password" placeholder="Passowrd" name="password"  required >
-</div>
-<span class = "errorMessage"></span>
-<div class="form-group">
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <a class="btn btn-primary" href="/employee/signup">signup</a>
-</div>
+                {{!-- form  --}}
+                <form action="/employee/login" id="employeeLogin" method="POST">
 
-</form>
+                    <div class="form-group">
+                        <label>
+                            <i class="far fa-user fa-2x"></i>Username:
+                        </label>
+                        <input type="text" class="form-control" placeholder="Username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-lock fa-2x"></i></i>Password:
+                        </label>
+                        <input type="password" class="form-control" placeholder="Passowrd" name="password" required>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-primary btn-block">Login</button><br>
+                        <a class="btn btn-primary btn-block" href="/employee/signup">signup</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
