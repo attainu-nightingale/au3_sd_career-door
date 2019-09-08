@@ -69,13 +69,20 @@ router.get('/:companyId', (req, res) => {
             res.send(err);
             return;
         }
+      let TotalRating = reviews.map(review => Number(review.review.reviewRating)).reduce((acc, curr, index, array)=>{
+        acc += curr
+        return acc;
+       })
+       let AverageRating = TotalRating/reviews.length
+      
         res.status(201).render('company.hbs', {
             title: company.companyName,
             styles: "company.css",
             script: "company.js",
             company: company,
             companyId: companyId,
-            reviews: reviews
+            reviews: reviews,
+            AverageRating:AverageRating
         })
 
 
