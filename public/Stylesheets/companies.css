@@ -1,0 +1,12 @@
+.companyCard:hover{
+    text-decoration: none;
+}
+
+.card {
+    transition: transform .2s;
+}
+.card:hover{
+    border: 1px solid blue;
+    transform: scale(1.1);
+}
+

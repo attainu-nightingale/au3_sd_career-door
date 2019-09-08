@@ -1,18 +1,14 @@
-<h1>Employee Profile</h1>
-<a class="btn btn-primary" href="/employee/logout">LogOut</a>
-
-<div id="employeeData">
-    <h3 class = "employeeName">{{employee.firstname}} {{employee.lastname}} </h3>
-     <p>{{employee.username}}</p>
-     <p>{{employee.email}}</p>
-    <p>{{employee.gender}}</p>
-    <p>{{employee.city}},{{employee.country}}</p>
-</div>
+<div>
+<h1>{{company.companyName}}</h1>
+<p>{{company.owns}}</p>
+<p>{{company.department}}</p>
+<p>{{company.website}}</p>
+<p>{{company.numberOfEmployee}}</p>
+<p>{{company.country}}</p>
 {{#if reviews}}
 <div class="row">
     {{#each reviews}}
     <div class="card col-12">
-
     <h5>{{this.review.reviewHeading}}<span></h5>
     <p>Rated :{{this.review.reviewRating}}/5</p>
     <p>{{this.review.description}}</p>
@@ -24,5 +20,5 @@
  <h5>No review Added</h5>
    {{/if}}
     
- 
- 
+<a href="/review/addReview/{{companyId}}" class="btn btn-primary">add review</a>
+</div>
