@@ -7,6 +7,7 @@ const reviewInstance = new ReviewManager();
 
 
 router.post('/register', (req, res) => {
+
     let companyName = req.body.companyName;
     let owns = req.body.owns;
     let department = req.body.department;
@@ -27,12 +28,12 @@ router.post('/register', (req, res) => {
         });
     })
 })
-router.get('/register', (req, res)=>{
+router.get('/register', (req, res) => {
     console.log("hi")
-    res.render('companyRegister.hbs',{
-        title:"Register Company",
-        styles:"companyRegister.hbs",
-        script:"companyRegister.js"
+    res.render('companyRegister.hbs', {
+        title: "Register Company",
+        styles: "companyRegister.hbs",
+        script: "companyRegister.js"
     })
 })
 router.get('/all', (req, res) => {
@@ -63,33 +64,37 @@ router.get('/:companyId', (req, res) => {
             res.status(404).send(err.message);
             return;
         }
-      
-     reviewInstance.getReviewByCompanyId(companyId, (err, reviews)=>{
-        if(err){
-            res.send(err);
-            return;
+
+        reviewInstance.getReviewByCompanyId(companyId, (err, reviews) => {
+            if (err) {
+                res.send(err);
+                return;
+            }
+            let AverageRating;
+            if(reviews){
+               
+            
+            let TotalRating = reviews.map(review => Number(review.review.reviewRating)).reduce((acc, curr, index, array) => {
+                acc += curr
+                return acc;
+            })
+             AverageRating = TotalRating / reviews.length
         }
-      let TotalRating = reviews.map(review => Number(review.review.reviewRating)).reduce((acc, curr, index, array)=>{
-        acc += curr
-        return acc;
-       })
-       let AverageRating = TotalRating/reviews.length
-      
-        res.status(201).render('company.hbs', {
-            title: company.companyName,
-            styles: "company.css",
-            script: "company.js",
-            company: company,
-            companyId: companyId,
-            reviews: reviews,
-            AverageRating:AverageRating
+            res.status(201).render('company.hbs', {
+                title: company.companyName,
+                styles: "company.css",
+                script: "company.js",
+                company: company,
+                companyId: companyId,
+                reviews: reviews,
+                AverageRating: AverageRating
+            })
+
+
         })
 
 
-     })
-     
-   
-});
+    });
 
 
 })

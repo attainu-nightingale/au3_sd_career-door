@@ -5,7 +5,11 @@
 <p>{{company.website}}</p>
 <p>{{company.numberOfEmployee}}</p>
 <p>{{company.country}}</p>
+{{#if AverageRating}}
 <p>Average rating:{{AverageRating}}/5</p>
+{{else}}
+<p>No rating Added</p>
+{{/if}}
 {{#if reviews}}
 <div class="row">
     {{#each reviews}}
