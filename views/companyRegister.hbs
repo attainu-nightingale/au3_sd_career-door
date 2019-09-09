@@ -1,32 +1,55 @@
-<div>
-<form action="/company/register" method="POST">
-<div class="form-group">
-    <input type="text" name = "companyName" placeholder="Enter Company name">
-</div>
-<div class="form-group">
-    <input type="text" name = "owns" placeholder="company Owns">
-</div>
-<div class="form-group">
-    <input type="text" name = "department" placeholder="Enter department">
-</div>
-<div class="form-group">
-    <input type="text" name = "website" placeholder="Enter website">
-</div>
-<div class="form-group">
-    <input type="text" name = "numberOfEmployee" placeholder="Enter employees working">
-</div>
-<div class="form-group">
-    <input type="text" name = "logo" placeholder="Enter logo address">
-</div>
-<div class="form-group">
-<input type="text" name = "city" placeholder="Enter City">
-</div>
-<div class="form-group">
-    <input type="text" name = "country" placeholder="Enter country">
-</div>
-<div class="form-group">
-<button type="submit" class="btn btn-primary">Register</button>
-</div>
-</form>
-
+<div class="container-fluid p-5">
+    <div class="row justify-content-center pl-5 pr-5">
+        <div class="col-auto">
+            <h2>Company Registration</h2>
+        </div>
+    </div>
+    <form class="pl-5 pr-5 pt-5" action="/company/register" method="POST" id="companyData">
+        <div class="form-group row pl-5 pr-5 pt-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="companyName"><h6>Name</h6></label>
+            <input class="form-control col-4" type="text" name="companyName" id="companyName" class="form-control" placeholder="Company Name">
+        </div>
+        <div class="form-group row pl-5 pr-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="owns"><h6>Owner</h6></label>
+            <input class="form-control col-4" type="text" name="owns" id="owner" class="form-control" placeholder="Person, Organization or Company">
+        </div>
+        <div class="form-group row pl-5 pr-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="department"><h6>Department</h6></label>
+            <select class="form-control col-4" id="department">
+                <option>IT</option>
+                <option>Financial</option>
+                <option>Marketing</option>
+                <option>Investment</option>
+                <option>Consulting</option>
+            </select>
+        </div>
+        <div class="form-group row pl-5 pr-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="numberOfEmployee"><h6>Employees</h6></label>
+            <input class="form-control col-4" type="text" name="numberOfEmployee" id="numberOfEmployee" class="form-control" placeholder="Enter number of employees working">
+        </div>
+        <div class="form-group row pl-5 pr-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="website"><h6>Website</h6></label>
+            <input class="form-control col-4" type="text" name="website" id="website" class="form-control" placeholder="Website">
+        </div>
+        <div class="form-group row pl-5 pr-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="logo"><h6>Logo</h6></label>
+            <input class="form-control col-4" type="text" name="logo" id="logo" class="form-control" placeholder="Enter logo address">
+        </div>
+        <div class="form-group row pl-5 pr-5 m-0">
+            <div class="col-2"></div>
+            <label class="col-2 pt-2" for="country"><h6>Country</h6></label>
+            <input class="form-control col-4" type="text" name="country" id="country" class="form-control" placeholder="Country">
+        </div>
+        <div class="form-group row justify-content-center pt-5 pl-5 pr-5 m-0">
+            <div class="col-auto pt-2">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
 </div>
