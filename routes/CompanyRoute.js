@@ -23,13 +23,10 @@ router.post('/register', (req, res) => {
             })
             return;
         }
-        res.json({
-            Success: data
-        });
+        res.redirect('/company');
     })
 })
 router.get('/register', (req, res) => {
-    console.log("hi")
     res.render('companyRegister.hbs', {
         title: "Register Company",
         styles: "companyRegister.hbs",
@@ -71,15 +68,13 @@ router.get('/:companyId', (req, res) => {
                 return;
             }
             let AverageRating;
-            if(reviews){
-               
-            
-            let TotalRating = reviews.map(review => Number(review.review.reviewRating)).reduce((acc, curr, index, array) => {
-                acc += curr
-                return acc;
-            })
-             AverageRating = TotalRating / reviews.length
-        }
+            if (reviews.length != 0) {
+                let TotalRating = reviews.map(review => Number(review.review.reviewRating)).reduce((acc, curr, index, array) => {
+                    acc += curr
+                    return acc;
+                })
+                AverageRating = TotalRating / reviews.length
+            }
             res.status(201).render('company.hbs', {
                 title: company.companyName,
                 styles: "company.css",

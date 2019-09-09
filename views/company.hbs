@@ -1,10 +1,11 @@
 <div>
+<img src="{{company.logo}}" alt="{{company.companyName}}">
 <h1>{{company.companyName}}</h1>
 <p>{{company.owns}}</p>
 <p>{{company.department}}</p>
 <p>{{company.website}}</p>
 <p>{{company.numberOfEmployee}}</p>
-<p>{{company.country}}</p>
+<p> {{company.city}}, {{company.country}}</p>
 {{#if AverageRating}}
 <p>Average rating:{{AverageRating}}/5</p>
 {{else}}
