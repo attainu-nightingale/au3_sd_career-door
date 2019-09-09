@@ -14,6 +14,7 @@ mongodbUtil.connectToServer((err, client) => {
     app.use(express.static('public'))
     app.set('view engine', 'hbs')
     app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
     app.use(cookieParser());
     app.use(session({
         key: 'user_sid',
@@ -25,7 +26,8 @@ mongodbUtil.connectToServer((err, client) => {
         }
     }));
  app.use('/employee', require('./routes/UserEmployeeRoute'));
- app.use('/review', require('./routes/ReviewRoute'))
+ app.use('/review', require('./routes/ReviewRoute'));
+ app.use('/company', require('./routes/CompanyRoute'))
  app.get('/',(req,res)=>{
      res.render('home.hbs',{
          title:"Career Door",

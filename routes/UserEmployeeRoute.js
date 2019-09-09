@@ -51,13 +51,17 @@ router.post('/login', (req, res) => {
         let id = data;
         req.session.user = id;
         req.session.loggedIn = true;
+        if (req.session.companyId){
+            console.log(req.session.companyId)
+            res.send('/review/addReview/'+ req.session.companyId);
+            return;
+        }
         res.send('/employee/profile/' + id);
     })
 });
 
 router.get('/profile/:userId', (req, res) => {
     let id = req.params.userId;
-    let data;
     if (req.session.user === req.params.userId && req.session.loggedIn) {
         employeeInstance.getEmployee(id, (err, employee) => {
             if (err) {
@@ -67,25 +71,22 @@ router.get('/profile/:userId', (req, res) => {
                 if (err) {
                     console.log(err)
                 }
-                if(reviews){
+                if (reviews) {
                     res.render('employeeProfile.hbs', {
                         title: "Employee Profile",
                         employee: employee,
-                        reviews:reviews,
+                        reviews: reviews,
+                        styles: "employeeProfile.css",
+                        script: "employeeProfile.js"
+                    })
+                } else {
+                    res.render('employeeProfile.hbs', {
+                        title: "Employee Profile",
+                        employee: employee,
                         styles: "employeeProfile.css",
                         script: "employeeProfile.js"
                     })
                 }
-            else{
-                res.render('employeeProfile.hbs', {
-                    title: "Employee Profile",
-                    employee: employee,
-                    styles: "employeeProfile.css",
-                    script: "employeeProfile.js"
-                })
-            }
-            
-
             });
 
         })
@@ -121,7 +122,5 @@ router.get('/signup', (req, res) => {
     })
 });
 
-router.post('/addReview', (req, res) => {
 
-})
 module.exports = router;
