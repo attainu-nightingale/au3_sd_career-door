@@ -3,8 +3,8 @@ const Review = require('../models/Review');
 var ObjectId = require('mongodb').ObjectID
 class ReviewMannager {
     constructor() {
-        this.collectionName = "Reviews",
-            this.collection = dbInstance.collection(this.collectionName);
+        this.collectionName = "Reviews";
+        this.collection = dbInstance.collection(this.collectionName);
 
     }
     addReview(userId, companyId, reviewHeading, description, reviewRating, callback) {
@@ -21,17 +21,29 @@ class ReviewMannager {
         });
     }
     getReviewOfEmployee(userId, callback) {
-        this.collection.find({"review.userId":userId}).toArray((err, data)=>{
-            if (err){
+        this.collection.find({
+            "review.userId": userId
+        }).toArray((err, data) => {
+            if (err) {
                 callback(err)
                 return;
             }
-        callback(null, data)
+            callback(null, data)
         })
-       
     }
+
+    getReviewByCompanyId(companyId, callback) {
+        this.collection.find({
+            "review.companyId": companyId
+        }).toArray((err, reviews) => {
+            if (err) {
+                callback(err);
+                return
+            }
+            callback(null, reviews)
+        })
+    }
+
+
 }
-
-
-
 module.exports = ReviewMannager;
