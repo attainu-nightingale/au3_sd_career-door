@@ -13,6 +13,14 @@ mongodbUtil.connectToServer((err, client) => {
     } 
     app.use(express.static('public'))
     app.set('view engine', 'hbs')
+    hbs.registerHelper('is', function (parameter, string, options) {
+        if (parameter == string) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    })
+
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use(cookieParser());
