@@ -18,7 +18,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
   <a id="compnayName" class="navbar-brand {{#is title 'Career Door'}} active{{/is}} " href="/">Career Door <span>|</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,30 +28,32 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link {{#is title 'Career Door'}} active{{/is}}" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link {{#is title 'Career Door'}} active{{/is}}" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{#is title 'Add review'}} active{{/is}}" href="#">Review</a>
+        <a class="nav-link {{#is title 'Company'}} active{{/is}}" href="/company">Companies</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Companies</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Register Company</a>
-      </li>
+     
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">For Employer <span>|</span></a>
+        {{#if login}}
+         <li class="nav-item">
+          <a class="nav-link" href="/employee/logout">Logout</a>
+        </li>
+       
+        {{else}}
+         <li class="nav-item">
+        <a class="nav-link {{#is title 'Register Company'}} active{{/is}}" href="/company/register">Register Company</a>
+      </li>
+         <li class="nav-item">
+          <a class="nav-link {{#is title 'Employee Signup'}} active{{/is}}" href="/employee/signup">Signup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{#is title 'Employee Signup'}} active{{/is}}" href="/employee/signup">SignUp</a>
+          <a class="nav-link {{#is title 'Employee Login'}} active{{/is}}" href="/employee/login">Login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {{#is title 'Login Employee'}} active{{/is}}" href="/employee/login">Login</a>
-        </li>
+        {{/if}}
       </ul>
     </form>
   </div>

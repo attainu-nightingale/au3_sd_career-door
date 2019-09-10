@@ -29,7 +29,7 @@ router.post('/register', (req, res) => {
 router.get('/register', (req, res) => {
     res.render('companyRegister.hbs', {
         title: "Register Company",
-        styles: "companyRegister.hbs",
+        styles: "companyRegister.css",
         script: "companyRegister.js"
     })
 })
@@ -46,11 +46,21 @@ router.get('/all', (req, res) => {
 })
 
 router.get('/', (req, res) => {
+    if (req.session.user && req.session.loggedIn){
+        res.render('companies.hbs', {
+            title: "Company",
+            login:"login",
+            styles: "companies.css",
+            script: "companies.js"
+        })
+    }
+ else{
     res.render('companies.hbs', {
         title: "Company",
         styles: "companies.css",
         script: "companies.js"
     })
+ }
 });
 
 router.get('/:companyId', (req, res) => {
@@ -73,7 +83,7 @@ router.get('/:companyId', (req, res) => {
                     acc += curr
                     return acc;
                 })
-                AverageRating = TotalRating / reviews.length
+                AverageRating = Math.round(TotalRating / reviews.length);
             }
             res.status(201).render('company.hbs', {
                 title: company.companyName,
@@ -84,14 +94,8 @@ router.get('/:companyId', (req, res) => {
                 reviews: reviews,
                 AverageRating: AverageRating
             })
-
-
         })
-
-
     });
-
-
 })
 
 module.exports = router;
