@@ -16,19 +16,27 @@ function getCompanies(companies) {
       else{
           company.rating = `${company.rating}/5`
       }
-        str += `<div class = container>
+        str += `
         <a href="/company/${company._id}" target = "_blank" class ="companyCard">
-            <div class="card" style="width: 18rem;">
-  <img class="card-img-top style="width: 5rem;"" src="${company.logo}" alt="${company.companyName}">
-  <div class="card-body">
-    <h5 class="card-title">${company.companyName}</h5>
-    <p class="card-text">${company.city}, ${company.country}</p>
-    <p class="card-text">${company.department}</p>
-    <p class="card-text">${company.rating}</p>
-      <button class="btn btn-primary">Read reviews</button>
-  </div>
-</div>
-</a> </div>
+        <div class="container"> 
+      
+        <div class="row ">
+        <div class="col-md-4">
+        <div class="card-deck">         
+        <div class="card card-section">
+        <img class="card-img-top company-logo" src="${company.logo}" alt="${company.companyName}">
+        
+        <h4 class="company-title">${company.companyName}</h4>
+        <p class="card-text"><i class="fa fa-map-marker icon"></i>${company.city}, ${company.country}</p>
+        <p class="card-text"><i class='fas fa-briefcase icon'></i>${company.department}</p>
+        <p class="card-text">${company.rating}</p>
+        <button class="btn" id="button">Read reviews</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </a>
  ` });
     
     $('#company').html(str);
