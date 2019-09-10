@@ -60,7 +60,7 @@ router.post('/login', (req, res) => {
     })
 });
 
-router.get('/profile/:userId', (req, res) => {
+router.get('/profile/:userId', ( req, res) => {
     let id = req.params.userId;
     if (req.session.user === req.params.userId && req.session.loggedIn) {
         employeeInstance.getEmployee(id, (err, employee) => {
@@ -75,6 +75,7 @@ router.get('/profile/:userId', (req, res) => {
                     res.render('employeeProfile.hbs', {
                         title: "Employee Profile",
                         employee: employee,
+                        login: "login",
                         reviews: reviews,
                         styles: "employeeProfile.css",
                         script: "employeeProfile.js"
@@ -83,6 +84,7 @@ router.get('/profile/:userId', (req, res) => {
                     res.render('employeeProfile.hbs', {
                         title: "Employee Profile",
                         employee: employee,
+                        login: "login",
                         styles: "employeeProfile.css",
                         script: "employeeProfile.js"
                     })
