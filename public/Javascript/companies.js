@@ -16,7 +16,7 @@ function getCompanies(companies) {
       else{
           company.rating = `${company.rating}/5`
       }
-        str += `
+        str += `<div class = container>
         <a href="/company/${company._id}" target = "_blank" class ="companyCard">
             <div class="card" style="width: 18rem;">
   <img class="card-img-top style="width: 5rem;"" src="${company.logo}" alt="${company.companyName}">
@@ -28,7 +28,7 @@ function getCompanies(companies) {
       <button class="btn btn-primary">Read reviews</button>
   </div>
 </div>
-</a>
+</a> </div>
  ` });
     
     $('#company').html(str);
