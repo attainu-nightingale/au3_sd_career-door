@@ -19,8 +19,7 @@ body{
 }
 .cards {
     display: flex;
-    
- }
+    }
 .card-deck{
     width:25rem;
     height: 18.0rem;

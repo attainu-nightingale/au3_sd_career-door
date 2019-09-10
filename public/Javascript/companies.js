@@ -17,6 +17,7 @@ function getCompanies(companies) {
           company.rating = `${company.rating}/5`
       }
         str += `
+        
         <a href="/company/${company._id}" target = "_blank" class ="companyCard">
         <div class="container"> 
       
