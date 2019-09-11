@@ -85,11 +85,16 @@ router.get('/:companyId', (req, res) => {
                 })
                 AverageRating = Math.round(TotalRating / reviews.length);
             }
+            let login = "";
+            if(req.session.user && req.session.loggedIn){
+                 login = "login"
+            }
             res.status(201).render('company.hbs', {
                 title: company.companyName,
                 styles: "company.css",
                 script: "company.js",
                 company: company,
+                login:login,
                 companyId: companyId,
                 reviews: reviews,
                 AverageRating: AverageRating

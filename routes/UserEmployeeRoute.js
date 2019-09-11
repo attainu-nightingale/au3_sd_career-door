@@ -72,6 +72,7 @@ router.get('/profile/:userId', ( req, res) => {
                     console.log(err)
                 }
                 if (reviews) {
+                    
                     res.render('employeeProfile.hbs', {
                         title: "Employee Profile",
                         employee: employee,
