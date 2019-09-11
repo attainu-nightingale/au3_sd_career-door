@@ -50,6 +50,7 @@ router.get('/', (req, res) => {
         res.render('companies.hbs', {
             title: "Company",
             login:"login",
+            profile:"/employee/profile/" + req.session.user,
             styles: "companies.css",
             script: "companies.js"
         })
@@ -96,6 +97,7 @@ router.get('/:companyId', (req, res) => {
                 company: company,
                 login:login,
                 companyId: companyId,
+                profile:"/employee/profile/" + req.session.user,
                 reviews: reviews,
                 AverageRating: AverageRating
             })

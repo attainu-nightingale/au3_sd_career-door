@@ -87,6 +87,7 @@ router.get('/profile/:userId', ( req, res) => {
                         employee: employee,
                         login: "login",
                         styles: "employeeProfile.css",
+                        profile:"/employee/profile/" + id,
                         script: "employeeProfile.js"
                     })
                 }

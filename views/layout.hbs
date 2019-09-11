@@ -18,7 +18,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a id="compnayName" class="navbar-brand {{#is title 'Career Door'}} active{{/is}} " href="/">Career Door <span>|</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,11 +39,13 @@
     <form class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         {{#if login}}
+           <li class="nav-item">
+          <a class="nav-link" href="{{profile}}">Profile</a>
+        </li>
          <li class="nav-item">
           <a class="nav-link" href="/employee/logout">Logout</a>
         </li>
-       
-        {{else}}
+      {{else}}
          <li class="nav-item">
         <a class="nav-link {{#is title 'Register Company'}} active{{/is}}" href="/company/register">Register Company</a>
       </li>
@@ -61,7 +63,7 @@
 
   {{{body}}}
 
-  <footer class="bg-dark fixed-bottom">
+  <footer class="bg-dark mt-2">
     All rights reserved © 2019 Career Door (India) Ltd. &COPY;
   </footer>
 

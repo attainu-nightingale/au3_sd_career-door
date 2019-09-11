@@ -44,7 +44,8 @@ mongodbUtil.connectToServer((err, client) => {
                 title: "Career Door",
                 styles: "home.css",
                 login: "login",
-                script: "home.js"
+                script: "home.js",
+                profile:"/employee/profile/" + req.session.user
             })
         } else {
             res.render('home.hbs', {
