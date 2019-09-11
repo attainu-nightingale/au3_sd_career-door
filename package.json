@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,6 @@
     "express-session": "^1.16.2",
     "hbs": "^4.0.4",
     "mongodb": "^3.3.2"
-  }
+  },
+  "keywords": []
 }

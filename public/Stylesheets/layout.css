@@ -7,10 +7,11 @@ body{
 }
 #compnayName{
     color: #007BFF;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 }
 
 footer{
     text-align: center;
-    color: #3B5999;
+    color: #007BFF;
 }
