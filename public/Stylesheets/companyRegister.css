@@ -3,11 +3,11 @@
 }
 
 body {
-    background-color: #f9fafb;
+    background-color: #ededed;
 }
 
 .container {
-    background-color: #f9fafb;
+    background-color: #ededed;
 }
 
 .col-12 {
@@ -16,5 +16,9 @@ body {
 
 #cRegHeading {
     color: white;
+    background-color: #37405f;
+}
+
+.btn {
     background-color: #37405f;
 }
