@@ -1,6 +1,5 @@
 const dbInstance = require('../mongodbUtil').getDb();
 const Review = require('../models/Review');
-var ObjectId = require('mongodb').ObjectID
 class ReviewMannager {
     constructor() {
         this.collectionName = "Reviews";
@@ -43,7 +42,5 @@ class ReviewMannager {
             callback(null, reviews)
         })
     }
-
-
 }
 module.exports = ReviewMannager;

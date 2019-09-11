@@ -41,7 +41,7 @@ router.get('/addReview/:companyId', (req, res) => {
         req.session.companyId = req.params.companyId;
         res.render('addReview.hbs', {
             title: "Add review",
-            login: "login",
+            login:"login",
             script: "addReview.js",
             styles: "addReview.css"
         })

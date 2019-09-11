@@ -33,24 +33,21 @@ img{
 .company-box{
     background-color: #394363;
     border-radius: 5px;
-/* box-shadow: -4px 7px 5px 0px rgba(0,0,0,0.75); */
-overflow-wrap: break-word;
+
 }
 
 #companyName{
     margin-top: 32px;
     vertical-align: middle;
-     
-    color:white;
+     color:white;
 }
 .description-box{
     background-color: #394363;
-    /* box-shadow: -4px 7px 5px 0px rgba(0,0,0,0.75); */
-
 }
 
 .description-text{
     color: white;
+    text-align: left;
 }
 
 .review-box{
