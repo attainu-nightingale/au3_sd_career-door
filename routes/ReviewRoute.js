@@ -10,7 +10,6 @@ const companyInstance = new CompanyManager();
 router.post('/addReview', (req, res) => {
     if (req.session.user && req.session.loggedIn) {
         let companyId = req.session.companyId;
-        console.log(companyId)
         let reviewHeading = req.body.reviewHeading;
         let description = req.body.description;
         let rating = req.body.rating;
@@ -42,6 +41,7 @@ router.get('/addReview/:companyId', (req, res) => {
         req.session.companyId = req.params.companyId;
         res.render('addReview.hbs', {
             title: "Add review",
+            login: "login",
             script: "addReview.js",
             styles: "addReview.css"
         })
