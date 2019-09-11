@@ -1,10 +1,10 @@
 $.ajax({
-    url: "/company/all",
-    type: 'GET',
-    dataType: 'json',
-    success: function (companies) {
-        getCompanies(companies)
-    }
+  url: "/company/all",
+  type: 'GET',
+  dataType: 'json',
+  success: function (companies) {
+      getCompanies(companies)
+  }
 });
 
 function getCompanies(companies) {
@@ -17,28 +17,28 @@ function getCompanies(companies) {
           company.rating = `${company.rating}/5`
       }
         str += `
-        
         <a href="/company/${company._id}" target = "_blank" class ="companyCard">
-        <div class="container"> 
-      
-        <div class="row ">
-        <div class="col-md-4">
-        <div class="card-deck">         
-        <div class="card card-section">
-        <img class="card-img-top company-logo" src="${company.logo}" alt="${company.companyName}">
         
-        <h4 class="company-title">${company.companyName}</h4>
-        <p class="card-text"><i class="fa fa-map-marker icon"></i>${company.city}, ${company.country}</p>
-        <p class="card-text"><i class='fas fa-briefcase icon'></i>${company.department}</p>
-        <p class="card-text">${company.rating}</p>
-        <button class="btn" id="button">Read reviews</button>
+        <div class="container1"> 
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card-deck">         
+                <div class="card card-section">
+
+                  <img class="card-img-top company-logo" src="${company.logo}" alt="${company.companyName}">
+                  <h4 class="company-title">${company.companyName}</h4>
+                  <p class="card-text" id="location"><i class="fa fa-map-marker icon"></i>${company.city}, ${company.country}</p>
+                  <p class="card-text" id="field"><i class='fas fa-briefcase icon'></i>${company.department}</p>
+                  <p class="card-text" id="rating">${company.rating}</p>
+                  <button class="btn btn-primary" id="button">Read reviews</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </a>
- ` });
+        </a>` 
+});
     
     $('#company').html(str);
 }
