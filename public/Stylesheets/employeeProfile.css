@@ -16,3 +16,15 @@
     top: 10px;
     right: 10px;
 }
+
+body {
+    background-color: #f9fafb;
+}
+
+.container {
+    background-color: #f9fafb;
+}
+
+#eProfHeading {
+    background-color: #37405f;
+}

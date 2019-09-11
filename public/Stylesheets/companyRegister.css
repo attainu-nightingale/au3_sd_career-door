@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9fafb;
+}
+
+.container {
+    background-color: #f9fafb;
+}
+
+#cRegHeading {
+    background-color: #37405f;
+}
