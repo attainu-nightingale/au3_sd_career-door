@@ -64,9 +64,18 @@ router.get('/', (req, res) => {
  }
 });
 
+router.get('/search', (req, res)=>{
+  companyInstance.search(req.query.q, (err, data)=>{
+     if(err){
+         res.status(400).send(err.message);
+         return
+     }
+     res.json(data)
+ })
+})
+
 router.get('/:companyId', (req, res) => {
     let companyId = req.params.companyId;
-    let reviews = [];
     companyInstance.getCompanyById(companyId, (err, company) => {
         if (err) {
             res.status(404).send(err.message);
@@ -105,4 +114,6 @@ router.get('/:companyId', (req, res) => {
     });
 })
 
+
+ 
 module.exports = router;

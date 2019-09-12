@@ -58,6 +58,15 @@ class CompanyManger {
             callback(null, data)
         })
     }
+    search(query, callback){
+        this.collection.find({companyName:{$regex: '^'+ query,$options:'i'}}).toArray((err, companies)=>{
+            if (err){
+                callback(new Error("Unknown Error"))
+                return
+            }
+            callback(null, companies)
+        })
+    }
 }
 
 
