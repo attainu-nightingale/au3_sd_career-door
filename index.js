@@ -41,7 +41,27 @@ mongodbUtil.connectToServer((err, client) => {
     app.use('/employee', require('./routes/UserEmployeeRoute'));
     app.use('/review', require('./routes/ReviewRoute'));
     app.use('/company', require('./routes/CompanyRoute'))
+<<<<<<< HEAD
     app.use('/', require('./routes/homeRoute'))
+=======
+    app.get('/', (req, res) => {
+        if (req.session.user && req.session.loggedIn) {
+            res.render('home.hbs', {
+                title: "Career Door",
+                styles: "home.css",
+                login: "login",
+                script: "home.js"
+            })
+        } else {
+            res.render('home.hbs', {
+                title: "Career Door",
+                styles: "home.css",
+                script: "home.js",
+            })
+        }
+
+    })
+>>>>>>> 3ec3bfb876aebe8abf590960a6cde301fa992e2c
 
     app.listen(port, function () {
         console.log("listenning on PORT", port)
