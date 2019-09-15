@@ -5,10 +5,16 @@ body{
     width:100%;
     height:100%;
 }
+.navbar-light{
+    background-color: #007BFF;
+    color:darkblue;
+}
+
 h4{
     color:#007BFF;
     margin-left: 28rem;
     font-weight: 600;
+    margin-top: 5rem;
     
 }
 .form-control{
@@ -17,14 +23,15 @@ h4{
 }
 
 .modal-dialog{
-    margin-top: 0.8rem;
-    border: 1.5px solid #f7f7f7;
-    border-radius: 1rem;
-    float:center;
+    margin-top: 1rem;
+    border:px solid #f7f7f7;
+    border-radius: 0rem;
+    box-shadow: 2px 2px 5px 5px #E0E0E0;
+    
 }
 #review{
     padding:0rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     
 }
 
@@ -35,7 +42,7 @@ h4{
 }
 
 .form-group{
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 100%;
     margin-bottom: 11px;
     font-family: Helvetica,Arial;
@@ -44,8 +51,12 @@ h4{
 
 #rating{
     padding: 0rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     
+}
+
+.form-check-label{
+    font-size:1.1rem;
 }
 
 .btn{
