@@ -3,9 +3,9 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header justify-content-center">
-        <h3 class="text-primary modal-title w-100 text-center">
-          Employee SignUp
-        </h3>
+        <h4 class="text-primary modal-title w-100 text-center">
+          Employee SignUp<i class="fas fa-dove"></i>
+        </h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
@@ -13,12 +13,12 @@
           {{!-- Firstname & Lastname  --}}
           <div class="form-group">
             <label>
-              <i class="far fa-user fa"></i>Firstname:
+              <i class="far fa-user fa"></i> Firstname:
             </label>
             <input type="text" class="form-control" name="firstname" placeholder="Enter Firstname" autofocus required>
             <br>
             <label>
-              <i class="far fa-user fa"></i>Lastname:
+              <i class="far fa-user fa"></i> Lastname:
             </label>
             <input type="text" class="form-control" name="lastname" placeholder="Enter Lastname" required>
           </div>
@@ -26,7 +26,7 @@
           {{!-- Username  --}}
           <div class="form-group">
             <label>
-              <i class="far fa-user fa"></i>Username:
+              <i class="far fa-user fa"></i> Username:
             </label>
             <input type="text" class="form-control" name="username" placeholder="Enter Username">
           </div>
@@ -34,7 +34,7 @@
           {{!-- Gender  --}}
           <!-- Default checked -->
           <label>
-            <i class="far fa-user fa"></i>Gender:
+            <i class="far fa-user fa"></i> Gender:
           </label>
           <div class="custom-control custom-radio">
             <input type="radio" class="custom-control-input" id="defaultChecked" name="gender" value = "Male" checked>
@@ -51,7 +51,7 @@
           {{!-- Email  --}}
           <div class="form-group">
             <label>
-              <i class="fas fa-envelope"></i>Email:
+              <i class="fas fa-envelope"></i> Email:
             </label>
             <input type="email" class="form-control" name="email" placeholder="Enter email" required>
           </div>
@@ -60,7 +60,7 @@
           {{!-- City  --}}
           <div class="form-group">
             <label>
-              <i class="fas fa-city"></i>City:
+              <i class="fas fa-city"></i> City:
             </label>
             <input type="text" class="form-control" name="city" placeholder="Enter City" required>
           </div>
@@ -68,7 +68,7 @@
           {{!-- Country --}}
           <div class="form-group">
             <label>
-              <i class="fas fa-globe"></i>Country:
+              <i class="fas fa-globe"></i> Country:
             </label>
             <input type="text" class="form-control" name="country" placeholder="Enter Country" required>
           </div>
@@ -76,7 +76,7 @@
           {{!-- Password --}}
           <div class="form-group">
             <label>
-              <i class="fa-lock-fa"></i>Password:
+              <i class="fa-lock-fa"></i> Password:
             </label>
             <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
           </div>
@@ -84,6 +84,7 @@
           <div class="modal-footer justify-content-center">
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
           </div>
+          <p class="text-center">Already have an account?<a href="/employee/login"> Login Here</a></p
         </form>
       </div>
     </div>

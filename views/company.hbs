@@ -1,48 +1,126 @@
 <div class="container-fluid mt-5">
   <div class="row">
-    <div class="img-box col-md-4 text-center"><img  src="{{company.logo}}" alt="{{company.companyName}}">
-</div>
-    <div class="company-box col-md-4 text-center"><h1 id="companyName">{{company.companyName}} <p>{{company.department}}</p>
-</h1>
-</div>
-    <div class="description-box col-md-4 text-center pt-2 text-left">
-    <p class="description-text"><i class="fas fa-city"></i>&nbsp;{{company.owns}}</p>
-    <p class="description-text"><i class="fas fa-globe"></i> &nbsp; {{company.website}}</p>
-    <p class="description-text"><i class="fas fa-users"></i> &nbsp; {{company.numberOfEmployee}}</p>
-    <p class="description-text"><i class="fas fa-map-marker-alt">&nbsp;</i> {{company.city}}, {{company.country}}</p>
-    {{#if AverageRating}}
-    <p class="description-text"><i class="fas fa-star"></i> &nbsp;Average rating : &nbsp;{{AverageRating}}/5</p>
-    {{else}}
-    <p class="description-text">No rating Added</p>
-    {{/if}}</div>
+    <div class="img-box col-md-4 text-center">
+      <img src="{{company.logo}}" alt="{{company.companyName}}">
+    </div>
+
+    {{!--row-1 company description --}}
+
+    <div class="company-box col-md-4">
+{{!-- row-1  --}}
+      <div class="row  mt-0">
+        <div class="col-sm-12 text-center">
+          <h1 class="text-center text-white">{{company.companyName}}
+            <p class="text-center text-white">{{company.department}}</hp>
+          </h1>
+        </div>
+      </div>
+      {{!-- row-2 other detail --}}
+      <div class="row mt-0">
+        <div class="col-sm-12 justify-content-center"style="display:inline-flex;">
+          <p class="description-text text-center"><i class="fas fa-globe"></i>&nbsp;{{company.website}}</p>&nbsp;&nbsp;&nbsp;
+          <p class="description-text text-center"><i class="fas fa-city"></i>&nbsp;{{company.owns}}</p>&nbsp;&nbsp;&nbsp;
+          <p class="description-text text-center"><i class="fas fa-users"></i>&nbsp;{{company.numberOfEmployee}}</p>
+        </div>
+      </div>
+
+{{!-- row-3 --}}
+      <div class="row mt-0 ">
+        <div class="col-12 justify-content-center" style="display:inline-flex">
+          <p class="description-text text center"><i class="fas fa-map-marker-alt">&nbsp;</i>{{company.city}}</p>&nbsp;&nbsp;
+          <p class="description-text text center"><i class="fas fa-map-marker-alt">&nbsp;</i>{{company.country}}</p>&nbsp;&nbsp;&nbsp;
+          <p class="description-text"><i class="fas fa-star"></i>&nbsp;Average rating :&nbsp;{{AverageRating}}/5</p>
+        </div>
+      </div>
+    </div>
+
+    {{!-- review-button  --}}
+    <div class="description-box col-md-4 text-center mt-5">
+      <a href="/review/addReview/{{companyId}}" class="justify-centent-center btn btn-outline-primary btn-block"
+        id="write-review">Write Review</a>
+    </div>
   </div>
-  
+</div>
+
+{{!-- Reviewed box --}}
 <div class="container">
-<hr>
-<div class=" review-box row mt-5">
-  <div class="col-12">
-    
-  <h2 style="display: inline; color:#007BFF">Reviews</h2>
-  <a href="/review/addReview/{{companyId}}" class="btn btn-primary" style="position:ralative; float:right; margin-top:10px;">Write Review</a>
-  </div>
-{{#if reviews}}
+  <hr>
+  <div class=" review-box row mt-5">
+    <div class="col-12">
 
-  {{#each reviews}}
-  <br>
-  <div class="card col-12">
-    <h5> {{this.review.reviewHeading}}<span></h5>
-    <p>Average rating : &nbsp;Rated :{{this.review.reviewRating}}/5</p>
-    <p>{{this.review.description}}</p>
-    <p class="text-muted">{{this.review.datePublished}}</p>
+      <h2 style="display: inline; color:#007BFF">Reviews</h2>
+
+    </div>
+    {{#if reviews}}
+
+    {{#each reviews}}
+    <br>
+    <div class="card col-12">
+      <h5> {{this.review.reviewHeading}}<span></h5>
+      <p>Average rating : &nbsp;Rated :{{this.review.reviewRating}}/5</p>
+      <p>{{this.review.description}}</p>
+      <p class="text-muted">{{this.review.datePublished}}</p>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
-{{else}}
-<h5>No review Added</h5>
-{{/if}}
+  {{else}}
+  <h5>No review Added</h5>
+  {{/if}}
 
 </div>
-</div>
+
+
+
+
+
+{{!-- <div class="container-fluid mt-5">
+  <div class="row">
+    <div class="img-box col-md-4 text-center"><img src="{{company.logo}}" alt="{{company.companyName}}">
+    </div>
+    <div class="company-box col-md-4 text-center">
+      <h1 id="companyName">{{company.companyName}} <p>{{company.department}}</p>
+      </h1>
+    </div>
+    <div class="description-box col-md-4 pt-2">
+      <p class="description-text"><i class="fas fa-city"></i>&nbsp;{{company.owns}}</p>
+      <p class="description-text"><i class="fas fa-globe"></i> &nbsp; {{company.website}}</p>
+      <p class="description-text"><i class="fas fa-users"></i> &nbsp; {{company.numberOfEmployee}}</p>
+      <p class="description-text"><i class="fas fa-map-marker-alt">&nbsp;</i> {{company.city}}, {{company.country}}</p>
+      {{#if AverageRating}}
+      <p class="description-text"><i class="fas fa-star"></i> &nbsp;Average rating : &nbsp;{{AverageRating}}/5</p>
+      {{else}}
+      <p class="description-text">No rating Added</p>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="container">
+    <hr>
+    <div class=" review-box row mt-5">
+      <div class="col-12">
+
+        <h2 style="display: inline; color:#007BFF">Reviews</h2>
+        <a href="/review/addReview/{{companyId}}" class="btn btn-outline-primary"
+          style="position:ralative; float:right; margin-top:10px;">Write Review</a>
+      </div>
+      {{#if reviews}}
+
+      {{#each reviews}}
+      <br>
+      <div class="card col-12">
+        <h5> {{this.review.reviewHeading}}<span></h5>
+        <p>Average rating : &nbsp;Rated :{{this.review.reviewRating}}/5</p>
+        <p>{{this.review.description}}</p>
+        <p class="text-muted">{{this.review.datePublished}}</p>
+      </div>
+      {{/each}}
+    </div>
+    {{else}}
+    <h5>No review Added</h5>
+    {{/if}}
+
+  </div>
+</div> --}}
 
 
 

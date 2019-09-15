@@ -50,7 +50,7 @@ mongodbUtil.connectToServer((err, client) => {
             res.render('home.hbs', {
                 title: "Career Door",
                 styles: "home.css",
-                script: "home.js"
+                script: "home.js",
             })
         }
 

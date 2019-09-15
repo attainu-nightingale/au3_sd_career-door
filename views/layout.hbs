@@ -13,13 +13,14 @@
   <!-- layout stylesheet-->
   <link rel="stylesheet" href="/Stylesheets/layout.css">
   <link rel="stylesheet" href="/Stylesheets/{{styles}}">
+  <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
   <title>{{title}}</title>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a id="compnayName" class="navbar-brand {{#is title 'Career Door'}} active{{/is}} " href="/">Career Door <span>|</span></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a id="compnayName" class="navbar-brand  snip1582 {{#is title 'Career Door'}} active{{/is}} " href="/">Career Door<i class="fas fa-dove"></i> |</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,10 +29,10 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link {{#is title 'Career Door'}} active{{/is}}" href="/">Home</a>
+        <a class="nav-link snip1582 {{#is title 'Career Door'}} active{{/is}}" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{#is title 'Company'}} active{{/is}}" href="/company">Companies</a>
+        <a class="nav-link snip1582 {{#is title 'Company'}} active{{/is}}" href="/company">Companies</a>
       </li>
      
 
@@ -40,18 +41,18 @@
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         {{#if login}}
          <li class="nav-item">
-          <a class="nav-link" href="/employee/logout">Logout</a>
+          <a class="nav-link snip1582" href="/employee/logout">Logout</a>
         </li>
        
         {{else}}
          <li class="nav-item">
-        <a class="nav-link {{#is title 'Register Company'}} active{{/is}}" href="/company/register">Register Company</a>
+        <a class="nav-link snip1582 {{#is title 'Register Company'}} active{{/is}}" href="/company/register">Register Company</a>
       </li>
          <li class="nav-item">
-          <a class="nav-link {{#is title 'Employee Signup'}} active{{/is}}" href="/employee/signup">Signup</a>
+          <a class="nav-link snip1582 {{#is title 'Employee Signup'}} active{{/is}}" href="/employee/signup">Signup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{#is title 'Employee Login'}} active{{/is}}" href="/employee/login">Login</a>
+          <a class="nav-link snip1582 {{#is title 'Employee Login'}} active{{/is}}" href="/employee/login">Login</a>
         </li>
         {{/if}}
       </ul>
