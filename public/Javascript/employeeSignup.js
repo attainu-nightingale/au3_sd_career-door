@@ -1,6 +1,4 @@
-console.log("hi")
 $('#employeeSignup').submit(function (e) {
-    console.log('hi')
      $('.errorMessage').text('');
     let signupEmployee = $('#employeeSignup');
     let endpoint = signupEmployee.attr('action');

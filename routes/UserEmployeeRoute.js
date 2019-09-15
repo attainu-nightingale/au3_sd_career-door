@@ -124,7 +124,8 @@ router.get('/signup', (req, res) => {
         script: "employeeSignup.js"
 
     })
-});
+})
+
 
 
 
