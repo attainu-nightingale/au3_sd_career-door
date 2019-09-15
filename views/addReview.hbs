@@ -1,5 +1,5 @@
 <div id="addReview">
-    <h4 class="modal-title w-100">
+    <h4 class="modal-title">
         Write a Review
     </h4>
     <div class="modal-dialog">
@@ -7,12 +7,12 @@
             <div class="modal-body">
                 <form action="/review/addReview/{{companyId}}" id="reviewForm" method="POST">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Heading</label>
+                        <label for="exampleFormControlInput1" id="heading">Heading</label>
                         <input type="text" class="form-control" name="reviewHeading" id="exampleFormControlInput1"
                             placeholder="Enter Heading">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Reviews</label>
+                        <label for="exampleFormControlTextarea1" id="review">Reviews</label>
                         <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"
                             placeholder="Enter Review"></textarea>
                     </div>
@@ -54,6 +54,7 @@
                     <div class="form-group">
                         <button class="btn btn-primary">Submit Review</button>
                     </div>
+
                 </form>
             </div>
         </div>

@@ -30,7 +30,7 @@ function getCompanies(companies) {
                   <p class="card-text" id="location"><i class="fa fa-map-marker icon"></i>${company.city}, ${company.country}</p>
                   <p class="card-text" id="field"><i class='fas fa-briefcase icon'></i>${company.department}</p>
                   <p class="card-text" id="rating">${company.rating}</p>
-                  <button class="btn btn-primary" id="button">Read reviews</button>
+                  <button class="btn btn-primary" id="button">Read Reviews</button>
 
                 </div>
               </div>
