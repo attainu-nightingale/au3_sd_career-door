@@ -42,5 +42,24 @@ class EmployeeManager {
             callback(null, data)
         })
     }
+    deleteReviewId(userId, reviewId, callback){
+        this.collection.findOne({"employee.id": new ObjectId(userId)}, (err, employee)=>{
+            if(err){
+                callback(new Error("Unknown Error"));
+                return;
+            }
+            let reviewArray = employee.employee.reviews;
+            let reviews = reviewArray.filter(review => JSON.stringify(review) !== JSON.stringify(reviewId))
+            this.collection.updateOne({"employee.id": new ObjectId(userId)},{$set:{"employee.reviews": reviews}},(err, response)=>{
+                if(err){
+                    callback(err)
+                    return;
+                }
+                callback(response)
+            })
+          
+            return
+        })
+    }
 }
 module.exports = EmployeeManager;

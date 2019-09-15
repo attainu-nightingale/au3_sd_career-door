@@ -50,6 +50,7 @@ router.get('/', (req, res) => {
         res.render('companies.hbs', {
             title: "Company",
             login:"login",
+            profile:"/employee/profile/" + req.session.user,
             styles: "companies.css",
             script: "companies.js"
         })
@@ -63,9 +64,18 @@ router.get('/', (req, res) => {
  }
 });
 
+router.get('/search', (req, res)=>{
+  companyInstance.search(req.query.q, (err, data)=>{
+     if(err){
+         res.status(400).send(err.message);
+         return
+     }
+     res.json(data)
+ })
+})
+
 router.get('/:companyId', (req, res) => {
     let companyId = req.params.companyId;
-    let reviews = [];
     companyInstance.getCompanyById(companyId, (err, company) => {
         if (err) {
             res.status(404).send(err.message);
@@ -85,12 +95,18 @@ router.get('/:companyId', (req, res) => {
                 })
                 AverageRating = Math.round(TotalRating / reviews.length);
             }
+            let login = "";
+            if(req.session.user && req.session.loggedIn){
+                 login = "login"
+            }
             res.status(201).render('company.hbs', {
                 title: company.companyName,
                 styles: "company.css",
                 script: "company.js",
                 company: company,
+                login:login,
                 companyId: companyId,
+                profile:"/employee/profile/" + req.session.user,
                 reviews: reviews,
                 AverageRating: AverageRating
             })
@@ -98,4 +114,6 @@ router.get('/:companyId', (req, res) => {
     });
 })
 
+
+ 
 module.exports = router;
