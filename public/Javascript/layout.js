@@ -1,5 +1,6 @@
 const searchBar = $('#searchBar');
 searchBar.keyup((e) => {
+  
     $('#suggestions').html('');
     let query = searchBar.val();
     if (!query) {
@@ -9,6 +10,7 @@ searchBar.keyup((e) => {
 })
 
 function findCompanyMatches(query) {
+
     let endpoint = '/company/search?q=' + query
     $.ajax({
         url: endpoint,

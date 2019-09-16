@@ -103,38 +103,49 @@ router.get('/edit/:reviewId', (req, res) => {
     }
 })
 
-router.delete('/:reviewId', (req, res) => {
-    // if(req.session.user && req.session.loggedIn){
-    let reviewId = req.params.reviewId;
-    reviewInstance.getReviewFromReviewId(reviewId, (err, review) => {
-        if (err) {
-            res.status(401).send(err.message);
-            return
-        }
-
-        let userId = review.review.userId
-        let companyId = review.review.companyId;
-        reviewInstance.deleteReview(reviewId, (err, response) => {
+router.delete('/delete/:reviewId', (req, res) => {
+    if (req.session.user && req.session.loggedIn) {
+        let reviewId = req.params.reviewId;
+        reviewInstance.getReviewFromReviewId(reviewId, (err, review) => {
             if (err) {
-                res.send(err.message);
-                return;
+                res.status(401).send(err.message);
+                return
             }
-            employeeInstance.deleteReviewId(userId, reviewId, (err, response) => {
-                if (err) {
-                    res.send(err)
-                    return
-                }
-                res.json(response)
-            })
+            let userId = review.review.userId;
+            if (req.session.user === userId) {
+                let companyId = review.review.companyId;
+                reviewInstance.deleteReview(reviewId, (err, response) => {
+                    if (err) {
+                        res.send(err.message);
+                        return;
+                    }
+                    employeeInstance.deleteReviewId(userId, reviewId, (err, response) => {
+                        if (err) {
+                            res.send(err)
+                            return
+                        }
+                        companyInstance.deleteReviewId(companyId, reviewId, (err, response) => {
+                            if (err) {
+                                res.send(err);
+                                return
+                            }
+                            res.send('/employee/profile/' + userId)
+
+                        })
+                    })
+                })
+            } else {
+                res.status(401).json({
+                    Error: "Access Denied"
+                });
+            }
         })
-        return;
-    })
-    // }
-    // else{
-    //     res.status(401).json({
-    //         Error: "Access Denied" });
-    //         return
-    // }
+    } else {
+        res.status(401).json({
+            Error: "Access Denied"
+        });
+        return
+    }
 
 })
 

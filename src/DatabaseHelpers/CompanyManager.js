@@ -67,6 +67,26 @@ class CompanyManger {
             callback(null, companies)
         })
     }
+    deleteReviewId(companyId, reviewId, callback){
+            console.log(companyId)
+        this.collection.findOne({"_id": new ObjectId(companyId)}, (err, company)=>{
+            if(err){
+                callback(new Error("Unknown Error"));
+                return;
+            }
+            let reviewArray = company.reviews;
+            let reviews = reviewArray.filter(review => JSON.stringify(review) !== JSON.stringify(reviewId))
+            this.collection.updateOne({"_id": new ObjectId(companyId)},{$set:{"reviews": reviews}},(err, response)=>{
+                if(err){
+                    callback(err)
+                    return;
+                }
+                callback(null, response)
+            })
+          
+            return
+        })
+    }
 }
 
 

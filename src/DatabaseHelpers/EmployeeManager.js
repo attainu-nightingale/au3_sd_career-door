@@ -55,7 +55,7 @@ class EmployeeManager {
                     callback(err)
                     return;
                 }
-                callback(response)
+                callback(null, response)
             })
           
             return
