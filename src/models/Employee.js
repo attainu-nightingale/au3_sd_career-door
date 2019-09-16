@@ -9,7 +9,7 @@ class Employee {
         this.email = email;
         this.city = city;
         this.country = country;
-        this.review = [];
+        this.reviews = [];
     }
 
 }
