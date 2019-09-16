@@ -24,5 +24,6 @@
     "hbs": "^4.0.4",
     "mongodb": "^3.3.2"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
