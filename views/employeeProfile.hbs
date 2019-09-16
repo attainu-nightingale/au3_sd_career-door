@@ -1,13 +1,13 @@
-<div class="container-fluid">
-    <div class="row justify-content-center p-4">
-        <div class="col-md-auto">
+<div class="container-fluid pt-5 mt-2">
+    <div class="row justify-content-center">
+        <div class="col-12 p-3" id="eProfHeading">
             <h2>{{employee.firstname}}&nbsp;{{employee.lastname}}</h2>
         </div>
     </div>
 
-    <div class="row pl-5 pt-0" id="employeeData">
+    <div class="row pl-5 pr-5 pt-5 mr-3 ml-3" id="employeeData">
         <div class="col">
-            <div class="row">
+            <div class="row pl-5 pr-5">
                 <div class="col-md-1">
                     <h6><b>Name</b></h6>
                 </div>
@@ -15,7 +15,7 @@
                     <h6 class="employeeName">{{employee.firstname}}&nbsp;{{employee.lastname}} </h6>
                 </div>
             </div>
-            <div class="row">
+            <div class="row pl-5 pr-5">
                 <div class="col-md-1">
                     <h6><b>Username</b></h6>
                 </div>
@@ -23,7 +23,7 @@
                     <h6 class="employeeUsername">{{employee.username}}</h6>
                 </div>
             </div>
-            <div class="row">
+            <div class="row pl-5 pr-5">
                 <div class="col-md-1">
                     <h6><b>Email</b></h6>
                 </div>
@@ -31,7 +31,7 @@
                     <h6 class="employeeEmail">{{employee.email}}</h6>
                 </div>
             </div>
-            <div class="row">
+            <div class="row pl-5 pr-5">
                 <div class="col-md-1">
                     <h6><b>Gender</b></h6>
                 </div>
@@ -39,7 +39,7 @@
                     <h6>{{employee.gender}}</h6>
                 </div>
             </div>
-            <div class="row">
+            <div class="row pl-5 pr-5 mb-5">
                 <div class="col-md-1">
                     <h6><b>City</b></h6>
                 </div>
@@ -56,27 +56,40 @@
         </div>
     </div>
     <br>
-    <div class="row pl-5">
-        <div class="col-md-12">
-            <a href="/company" class="btn btn-primary">add review</a>
+    <div class="row pl-4 pr-5 mt-5 mr-5 ml-5">
+        <div class="col-md-12 pl-5 pr-5">
+            <a href="/company" class="btn btn-primary">Write Review</a>
         </div>
     </div>
     <br>
 
     {{#if reviews}}
-    <div class="row pl-5 mr-5">
+    <div class="row pl-5 pr-5 ml-5 mr-5">
         {{#each reviews}}
-        <div class="card col-12 m-3">
-            <div class="row p-2">
+        
+        <div class="card col-12 pl-3 pr-3 m-3 w-100">
+            <div class="row pt-3 pl-4 pr-4">
                 <h5>{{this.review.reviewHeading}}</h5>
             </div>
-            <div class="row pl-2">
+             <div class="row pl-4 pr-4">
+                <p class="text-muted">Rated :{{this.review.reviewRating}}/5</p>
+            </div>
+            <div class="row pl-4 pr-4">
                 <p>{{this.review.description}}</p>
             </div>
-            <div class="row pl-2">
+            <div class="row pl-4 pr-4">
                 <p class="text-muted">{{this.review.datePublished}}</p>
             </div>
+            <div class="row justify-content-between pb-3">
+                <div class="col-1">
+            <a class="btn btn-primary" href="/review/edit/{{this._id}}">edit</a>
+            </div>
+                 <div class="col-1">
+            <button class="btn btn-primary deleteButton" id = "{{this._id}}">delete</a>
+            </div>
+            </div>
         </div>
+
         {{/each}}
     </div>
     {{else}}
