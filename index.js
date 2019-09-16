@@ -15,6 +15,7 @@ hbs.registerHelper('is', function (parameter, string, options) {
     }
 })
 app.use(express.static('public'))
+app.use(express.static('src'));
 app.set('view engine', 'hbs')
 
 
