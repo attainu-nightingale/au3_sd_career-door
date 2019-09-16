@@ -6,7 +6,7 @@ const session = require('express-session');
 var cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-const mongodbUtil = require('./src/mongodbUtil');
+const mongodbUtil = require('./src/mongodbUtil', { useUnifiedTopology: true });
 mongodbUtil.connectToServer((err, client) => {
     if (err) {
         console.log(err);
