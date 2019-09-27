@@ -87,6 +87,7 @@ router.get('/profile/:userId', ( req, res) => {
                         employee: employee,
                         login: "login",
                         styles: "employeeProfile.css",
+                        profile:"/employee/profile/" + id,
                         script: "employeeProfile.js"
                     })
                 }
@@ -123,7 +124,10 @@ router.get('/signup', (req, res) => {
         script: "employeeSignup.js"
 
     })
-});
+})
+
+
+
 
 
 module.exports = router;

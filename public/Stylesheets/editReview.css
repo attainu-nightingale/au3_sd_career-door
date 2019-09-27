@@ -14,14 +14,16 @@ body {
     text-align: center;
 }
 
-#cRegHeading {
+#editReviewHeading {
     color: white;
     background-color: #37405f;
-    width: 100%;
 }
 
+.modal-body {
+    background-color: #f7f7f7;
+}
 
-/*
-.btn {
-    background-color: #37405f;
-}*/
+.modal-body {
+    border: 1.5px solid #f7f7f7;
+    border-radius: 5px;
+}

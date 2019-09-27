@@ -1,5 +1,6 @@
 const dbInstance = require('../mongodbUtil').getDb();
 const Review = require('../models/Review');
+const ObjectId = require('mongodb').ObjectID;
 class ReviewMannager {
     constructor() {
         this.collectionName = "Reviews";
@@ -40,6 +41,35 @@ class ReviewMannager {
                 return
             }
             callback(null, reviews)
+        })
+    }
+    editReview(reviewId, updatedReview ,callback) {
+        this.collection.updateOne({"_id":new ObjectId(reviewId)},{$set:updatedReview},(err, result)=>{
+            if(err){
+                callback(new Error("Unknown Error"))
+                return;
+            }
+            callback(null, result);
+        })
+    }
+    getReviewFromReviewId(reviewId, callback){
+        this.collection.findOne({"_id": new ObjectId(reviewId)}, (err, review)=>{
+            if (err){
+                callback(new Error("Unknown error"));
+                return;
+            }
+           
+            callback(null, review);
+            return
+        })
+    }
+    deleteReview(reviewId, callback){
+        this.collection.deleteOne({"_id": new ObjectId(reviewId)},(err, data)=>{
+            if(err){
+                callback(new Error("Unknown Error"));
+                return;
+            }
+            callback(null,data);
         })
     }
 }
