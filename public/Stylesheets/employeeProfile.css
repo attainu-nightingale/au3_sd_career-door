@@ -30,8 +30,10 @@ body {
 }
 
 #eProfHeading {
-    color: white;
-    background-color: #37405f;
+    color: black;
+    /* background-color: #37405f; */
+    background-color: whitesmoke;
+    margin-top: 3.5rem;
 }
 
 .card {

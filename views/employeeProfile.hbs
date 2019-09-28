@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-12 p-3" id="eProfHeading">
+        <div class="col-12 p-2" id="eProfHeading">
             <h2>{{employee.firstname}}&nbsp;{{employee.lastname}}</h2>
         </div>
     </div>
@@ -66,9 +66,9 @@
     {{#if reviews}}
     <div class="row pl-5 pr-5 ml-5 mr-5">
         {{#each reviews}}
-        
-        <div class="card col-12 pl-3 pr-3 m-3 w-100">
-            <div class="row pt-3 pl-4 pr-4">
+
+        <div class="card col-12 pl-3 pr-3 m-3">
+            <div class="row p-2">
                 <h5>{{this.review.reviewHeading}}</h5>
             </div>
              <div class="row pl-4 pr-4">
@@ -80,13 +80,13 @@
             <div class="row pl-4 pr-4">
                 <p class="text-muted">{{this.review.datePublished}}</p>
             </div>
-            <div class="row justify-content-between pb-3">
-                <div class="col-1">
-            <a class="btn btn-primary" href="/review/edit/{{this._id}}">edit</a>
-            </div>
-                 <div class="col-1">
-            <button class="btn btn-primary deleteButton" id = "{{this._id}}">delete</a>
-            </div>
+            <div class="row">
+                <div class="col-6 text-left mb-2">
+                    <a class="btn btn-primary" href="/review/edit/{{this._id}}">Edit</a>
+                </div>
+                <div class="col-6 text-right">
+                    <button class="btn btn-danger deleteButton" id = "{{this._id}}">delete</button>
+                </div>
             </div>
         </div>
 

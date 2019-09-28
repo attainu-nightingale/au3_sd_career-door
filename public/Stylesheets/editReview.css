@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #ededed;
+    background-color: hsl(0, 0%, 93%);
 }
 
 .container {
@@ -17,6 +17,7 @@ body {
 #editReviewHeading {
     color: white;
     background-color: #37405f;
+    margin-top: 3.5rem;
 }
 
 .modal-body {
@@ -27,8 +28,3 @@ body {
     border: 1.5px solid #f7f7f7;
     border-radius: 5px;
 }
-
-
-/*.btn {
-    background-color: #37405f;
-}*/
