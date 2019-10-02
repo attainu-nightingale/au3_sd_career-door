@@ -24,7 +24,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: .8%;
+    /* padding: .8%; */
+    
 }
 
 .navbar-form {

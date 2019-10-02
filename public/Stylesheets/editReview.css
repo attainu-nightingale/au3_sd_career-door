@@ -17,6 +17,7 @@ body {
 #editReviewHeading {
     color: white;
     background-color: #37405f;
+    margin-top: 3.5rem;
 }
 
 .modal-body {
