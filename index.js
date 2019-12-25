@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const mongodbUtil = require('./src/mongodbUtil');
+
 hbs.registerHelper('is', function (parameter, string, options) {
     if (parameter == string) {
         return options.fn(this);
