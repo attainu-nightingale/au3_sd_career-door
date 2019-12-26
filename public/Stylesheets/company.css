@@ -1,10 +1,18 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+}
+
 body{
     background-color: #EDEDED;
 }
 
-container-fluid{
+/* container-fluid{
     background-color: #394363;
-}
+} */
 
 .row{
     margin-top: 80px;
@@ -21,7 +29,7 @@ img{
     height: 170px;
     width: 180px;
     position: relative;
-    margin-top: 17px;
+    margin: 17px;
     background-color: #EFEFEF;
     border-radius: 10px;
     box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
@@ -31,23 +39,33 @@ img{
 
 
 .company-box{
-    background-color: #394363;
+    /* background-color: red; */
     border-radius: 5px;
 
 }
 
 #companyName{
-    margin-top: 32px;
-    vertical-align: middle;
+    /* margin-top: 32px; */
+    /* vertical-align: middle; */
      color:white;
 }
-.description-box{
+/* .description-box{
     background-color: #394363;
-}
+} */
 
 .description-text{
     color: white;
-    text-align: left;
+    /* text-align: center; */
+    /* margin-left: 120px; */
+}
+#write-review{
+    margin-top: 20px;
+    height: 70px;
+    text-align: center;
+    padding-top: 20px;
+    width: 80%;
+    margin-left: 40px;
+    margin-bottom: 2px;
 }
 
 .review-box{

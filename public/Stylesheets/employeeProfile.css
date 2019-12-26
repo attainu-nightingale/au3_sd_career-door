@@ -16,3 +16,32 @@
     top: 10px;
     right: 10px;
 }
+
+body {
+    background-color: #ededed;
+}
+
+.container {
+    background-color: #ededed;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+#eProfHeading {
+    color: white;
+    background-color: #37405f;
+    margin-top: 3.5rem;
+}
+
+.card {
+    background-color: #f7f7f7;
+}
+
+
+/*
+.btn {
+    background-color: #37405f;
+}
+*/
