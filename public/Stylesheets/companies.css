@@ -1,37 +1,39 @@
-body{
+body {
     background-color: #f7f7f7;
 }
 
- .companyCard:hover{
+.companyCard:hover {
     text-decoration: none;
-}  
+}
 
 .card {
     transition: transform .2s;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
 
- .card:hover{
+.card:hover {
     border: 1px solid #3333FF;
     transform: scale(1.05);
-} 
-
-#heading{
-    color: #007BFF;
-    font-size: 1.5rem;
-    margin-left:8rem;
 }
 
-.container{
-    width:100%;
-    background-color:#FFFFFF;
+#heading {
+    color: #007BFF;
+    font-size: 1.5rem;
+    margin-left: 210px;
+    margin-top: 4rem;
+    margin-bottom: 0px;
+}
+
+.container {
+    width: 100%;
+    background-color: #FFFFFF;
     border: 1px solid #f7f7f7;
     border-radius: 0rem;
 }
 
-.container1{
-    width:100%;
+.container1 {
+    width: 100%;
     margin-top: 1rem;
     margin-left: 2rem;
 }
@@ -40,90 +42,109 @@ body{
     display: flex;
 }
 
-.card-deck{
-    width:23rem;
+.card-deck {
+    width: 23rem;
     height: 18.0rem;
+    margin-top: 1rem;
+
+
 }
-.card-section{
+
+.card-section {
     border: 1px solid grey;
-    
+    box-shadow: 3px 3px 3px 3px #F0F0F0;
+    background-color: #F8F8FF;
 }
 
-.company-logo{
-    width: 4.5rem;
+.company-logo {
+    width: 5rem;
     height: 4rem;
+    margin-top: 1rem;
+    margin-right: 0.2rem;
+    margin-left: 15rem;
+    border: 1px solid #707070;
+    border-radius: 0.1rem;
 }
 
-#location{
+#location {
     font-size: 1rem;
-    margin-left: 5.5rem;
+    margin-left: 0.5rem;
     margin-top: 3.5rem;
-    color:	#000000;
-    text-align:justify; 
-    height:2rem;
+    color: #000000;
+    text-align: justify;
+    height: 2rem;
     line-height: 70%;
 }
-#field{
+
+#field {
     font-size: 1rem;
-    margin-left: 5.5rem;
+    margin-left: 0.5rem;
     margin-top: 0rem;
-    color:	#000000;
-    text-align:justify; 
-    height:2rem;
+    color: #000000;
+    text-align: justify;
+    height: 2rem;
     line-height: 80%;
 }
 
-#rating{
+#rating {
     font-size: 1rem;
-    margin-left: 5.9rem;
+    margin-left: 1rem;
     margin-top: 0rem;
-    color:	#000000;
-    text-align:justify; 
+    color: #000000;
+    text-align: justify;
     line-height: 70%;
 }
-.company-title{
+
+.company-title {
     font-size: 2rem;
     float: right;
-    margin-left: 6rem;
+    margin-left: 0.5rem;
     margin-top: -3.5rem;
-    color:	#000000;
-    height:2rem;
+    color: #000000;
+    width: 15rem;
+    height: 2rem;
     line-height: 95%;
     word-spacing: 0px;
-   
+
 }
 
-#button{
-    background-color:#007BFF;
+#button {
+    background-color: #007BFF;
     margin-top: 2rem;
     border: 1px solid #808080;
     border-radius: 0rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
 }
 
-.icon{
-    color:#696969;
-    
+.icon {
+    color: #696969;
+
 }
 
 @media only screen and (max-width: 768px) {
-   
-     .container1{ 
-        width:100%;
-        
+
+    .container1 {
+        width: 100%;
+
     }
-    .card-section{
-        width:100%;
-        height:100%; 
-       
+
+    .card-section {
+        width: 100%;
+        height: 100%;
+
     }
-    .container{
-        width:100%;
-        
+
+    .container {
+        width: 100%;
+        margin-left: 0.5rem;
         height: auto;
     }
-    #heading{
+
+    #heading {
         color: #303030;
         font-size: 1.5rem;
-        margin-left:3rem;
+        margin-left: 3rem;
     }
-} 
+}

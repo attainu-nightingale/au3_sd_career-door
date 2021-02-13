@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(0, 0%, 93%);
+}
+
+.container {
+    background-color: #ededed;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+#editReviewHeading {
+    color: white;
+    background-color: #37405f;
+    margin-top: 3.5rem;
+}
+
+.modal-body {
+    background-color: #f7f7f7;
+}
+
+.modal-body {
+    border: 1.5px solid #f7f7f7;
+    border-radius: 5px;
+}

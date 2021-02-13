@@ -7,28 +7,47 @@ html,body{
 }
 
 body{
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #FFFFFF;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 
 
 
 .template-section{
-    background-image: url('https://static.ambitionbox.com/img/homepage/header.svg');
+    background-image: url('https://images.pexels.com/photos/1449052/pexels-photo-1449052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    /* background-image: url('https://static.ambitionbox.com/img/homepage/header.svg'); */
     position: relative;
     top: 60px;
     justify-items: auto;
     text-align: center;
-    height: 300px;
+    height: 595px;
     width: 100%;
     background-color: #272E48;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 .main{
     top: 50%;
 }
 
 h1{
-    color: white;
+    margin-top: 100px;
+    /* color: white; */
+    color: #007BFF;
     font-weight: bold;
+    
 }
 .text{
      /* background-color: red;  */
@@ -48,7 +67,12 @@ h1{
 }
 
 #span-text{
-    color: white;
+    /* color: white; */
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 3.5px;
+font-family: 'Cinzel', serif;
 }
 
 input{

@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ededed;
+}
+
+.container {
+    background-color: #ededed;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+#cRegHeading {
+    color: black;
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+
+/*
+.btn {
+    background-color: #37405f;
+}*/
